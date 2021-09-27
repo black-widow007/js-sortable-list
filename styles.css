@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
+:root {
+    --bg: #E6E2DD;
+    --bg2: #c3c7ca;
+    --accent-color: #D48166;
+    --dark: #373A36;
+    --light: #fff;
+    --right: #1FC58E;
+    --wrong: #FF4838;
+    --wrong2: #E40C2B;
+    --over: #C39EA0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    color: var(--dark);
+    font-size: 16px;
+}
+
+.draggable-list {
+    /* border: 2px solid var(--accent-color); */
+    color: var(--dark);
+    padding: 0;
+    list-style-type: none;
+    margin: 20px 0;
+}
+
+.draggable-list li {
+    background-color: var(--light);
+    display: flex;
+    flex: 1;
+}
+.draggable-list li:not(:last-of-type) {
+    border-bottom: 2px solid var(--bg);
+}
+
+.draggable-list .number {
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    height: 60px;
+    width: 60px;
+}
+
+.draggable-list li.over .draggable {
+    background-color: var(--over);
+}
+
+.draggable-list .person-name {
+    margin: 0 20px 0 0;
+}
+
+.draggable-list li.right .person-name {
+    color: var(--right);
+    transition: 0.3s;
+}
+
+.draggable-list li.wrong .person-name {
+    color: var(--wrong);
+}
+
+
+.draggable {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    flex: 1;
+}
+
+.check-btn {
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--dark);
+    font-size: 1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.check-btn:hover {
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: var(--bg);
+}
+
+.check-btn:active {
+    transform: scale(0.98);
+}
+
+/* Media Queries */
+@media(max-width: 812px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
